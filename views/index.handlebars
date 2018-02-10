@@ -1,2 +1,9 @@
-<h1>Id: {{id}}</h1>
-<h2>Plan: {{plan}}</h2>
+{{#each burgers}}
+<h1>Id: {{this.id}}</h1>
+<h2>buger name: {{this.burger_name}}</h2>
+{{#if devoured}}
+	<h3>devoured</h3>
+{{else}}
+	<h3>Not Devoured</h3>
+{{/if}}
+{{/each}}

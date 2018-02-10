@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: process.env.password,
-  database: "day_planner_db"
+  database: "burgers_db"
 });
 
 

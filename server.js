@@ -14,11 +14,19 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var orm = require("./config/orm.js");
+// var burger = require("./models/burger.js");
 
-orm.selectAll("SELECT * FROM ", "plans", function(res){
-	console.log("This is res id: ", res[0].id);
-});
+// burger.selectAll("burgers", res => console.log(res));
+
+// burger.selectAll("plans", function(res){
+// 	console.log(res);
+// });
+
+// Import routes and give the server access to them.
+var routes = require("./controllers/burger_controller.js");
+
+app.use(routes);
+
 
 
 app.listen(port, function() {
