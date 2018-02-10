@@ -131,6 +131,23 @@ var orm = {
 
       cb(result);
     });
+  },
+
+  deleteOne: function(tableInput, id, cb) {
+    var queryString = "DELETE FROM " + tableInput;
+
+    queryString += " WHERE id = ";
+    queryString += id.toString();
+    queryString += " ;"
+
+    console.log(queryString);
+
+    connection.query(queryString, function(err, result){
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
   }
 };
 

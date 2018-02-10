@@ -1,9 +1,28 @@
+<div class="burger-area">
 {{#each burgers}}
-<h1>Id: {{this.id}}</h1>
-<h2>buger name: {{this.burger_name}}</h2>
+
 {{#if devoured}}
-	<h3>devoured</h3>
+<div class="devoured">
+	{{this.id}}. {{this.burger_name}}	<button class="delete" data-id={{this.id}}>Delete Me!</button>
+</div>
 {{else}}
-	<h3>Not Devoured</h3>
+<div class="fresh">
+	{{this.id}}. {{this.burger_name}} <button class="devour" data-id={{this.id}}>Devour Me!</button>
+</div>
 {{/if}}
 {{/each}}
+</div>
+
+<!-- <div>
+	<input type="text" id="burgerName"></input>
+	<button id="addburger">add burger</button>
+</div> -->
+
+<form class="create-burger">
+
+  <div class="form-group">
+    <label for="burgers">Burger Name:</label>
+    <input type="text" id="burgerName" name="name">
+  </div>
+  <button type="submit">Add Burger</button>
+</form>

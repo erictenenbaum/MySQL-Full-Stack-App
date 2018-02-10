@@ -8,6 +8,7 @@ var port = 3000;
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static("./public"));
 
 var exphbs = require("express-handlebars");
 

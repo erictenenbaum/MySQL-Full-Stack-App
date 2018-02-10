@@ -1,0 +1,25 @@
+/*.fresh {
+	float: left;
+}*/
+.burger-area {
+	background-color: aqua;
+	max-height: 600px;
+	max-width: 720px;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.devoured {
+	clear: left;
+	float: right;
+	color: grey;
+}
+
+/*.create-form {
+	text-align: center;
+	align-items: center;
+}*/
+
+

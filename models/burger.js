@@ -19,17 +19,33 @@ var orm = require("../config/orm.js");
 
 // This model works, follow this for the rest
 
-exports.selectAll = function(tableInput, cb) {
-	orm.selectAll(tableInput, cb);
-};
+// exports.selectAll = function(tableInput, cb) {
+//     orm.selectAll(tableInput, cb);
+// };
 
-exports.insertOne = function(tableInput, cols, vals, cb){
-	orm.insertOne(tableInput, cols, vals, cb);
-};
+// exports.insertOne = function(tableInput, cols, vals, cb) {
+//     orm.insertOne(tableInput, cols, vals, cb);
+// };
 
-exports.updateOne = function (tableInput, objColVals, condition, cb){
-	orm.updateOne(tableInput, objColVals, condition, cb);
-};
+// exports.updateOne = function(tableInput, objColVals, condition, cb) {
+//     orm.updateOne(tableInput, objColVals, condition, cb);
+// };
+
+
+module.exports = {
+    selectAll: function(cb) {
+        orm.selectAll("burgers", cb);
+    },
+    insertOne: function(cols, vals, cb) {
+        orm.insertOne("burgers", cols, vals, cb);
+    },
+    updateOne: function(objColVals, condition, cb) {
+        orm.updateOne("burgers", objColVals, condition, cb);
+    },
+    deleteOne: function(id, cb) {
+    	orm.deleteOne("burgers", id, cb);
+    }
+}
 
 
 
@@ -39,7 +55,7 @@ exports.updateOne = function (tableInput, objColVals, condition, cb){
 
 // function(table, callback) {
 //     var selectArray = [];
-   
+
 //     connection.query("SELECT * FROM " + table + ";", function(error, results, fields) {
 //         if (error) throw error;
 
@@ -51,10 +67,10 @@ exports.updateOne = function (tableInput, objColVals, condition, cb){
 //             }
 
 //             selectArray.push(dataObject);
-            
+
 //         }
-           
-  
+
+
 
 //         // selectArray.push(dataObject);
 
