@@ -7,35 +7,6 @@ var connection = mysql.createConnection({
   database: "burgers_db"
 });
 
-
-  console.log("hi");
-
-
-// function databaseConnect() 
-
-
-
-// module.exports = function (queryString) {
-// 	// connection.connect(function(err) {
-//  //        if (err) {
-//  //            console.error("error connecting: " + err.stack);
-//  //            return;
-//  //        }
-
-//  //        console.log("connected as id " + connection.threadId);
-//  //    })
-
-//  connection.query(queryString, function(error, results, fields){
-// 	if (error) throw error;
-// 	return results;
-// })
-
-//  	// console.log("hello");
-// }
-
-
-// module.exports = connection.query(queryString, callbackFunction)
-
 module.exports = connection;
 
     

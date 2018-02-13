@@ -1,25 +1,26 @@
-/*.fresh {
-	float: left;
-}*/
-.burger-area {
-	background-color: aqua;
-	max-height: 600px;
-	max-width: 720px;
+.burgerPic {
+	max-height: 500px;
+	max-width: 310px;
 }
 
-.clearfix {
-    overflow: auto;
+body {
+	background-color: orange;
 }
 
 .devoured {
-	clear: left;
-	float: right;
-	color: grey;
+	background-color: #DEB887;
+	padding-left: 20px;
 }
 
-/*.create-form {
-	text-align: center;
-	align-items: center;
-}*/
+.fresh {
+	background-color: #FFA07A;
+		padding-left: 20px;
+	margin-left: 40px;
+}
+
+.addBurger {
+	padding-left: 60px;
+}
+
 
 

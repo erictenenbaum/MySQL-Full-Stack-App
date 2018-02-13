@@ -1,8 +1,12 @@
+// Require dependencies
+
 var express = require("express");
 
 var router = express.Router();
 
 var burger = require("../models/burger.js");
+
+// Get Request - calls our select all function from orm.js
 
 router.get("/", function(req, res) {
     burger.selectAll(function(results) {
@@ -12,7 +16,7 @@ router.get("/", function(req, res) {
     });
 });
 
-
+// Post request uses our insertOne function from orm.js
 router.post("/api/burger", function(req, res) {
     console.log(req.body.burger_name);
     burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(data) {
@@ -20,7 +24,7 @@ router.post("/api/burger", function(req, res) {
     });
 })
 
-
+// Put request to update the burger from fresh to devoured
 router.put("/api/burger/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
@@ -39,31 +43,14 @@ router.put("/api/burger/:id", function(req, res) {
     });
 });
 
+// Delete request that uses a delete function from orm.js
 router.delete("/api/burger/:id", function(req, res){
 	burger.deleteOne(req.params.id, function(result){
 		console.log(result);
 
 		res.status(200).end();
-	})
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	});
+});
 
 
 module.exports = router;

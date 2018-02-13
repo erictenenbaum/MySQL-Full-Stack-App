@@ -1,50 +1,6 @@
 var connection = require("./connection.js");
 
 
-// exports.selectAll = function(table, callback) {
-//     var selectArray = [];
-   
-//     connection.query("SELECT * FROM " + table + ";", function(error, results, fields) {
-//         if (error) throw error;
-
-
-//         for(let i = 0; i < results.length; i++) {
-//             let dataObject = {
-//              id: results[i].id,
-//              plan: results[i].plan
-//             }
-
-//             selectArray.push(dataObject);
-            
-//         }
-           
-  
-
-//         // selectArray.push(dataObject);
-
-//         callback(selectArray);
-//     });
-// };
-
-// exports.insertOne = function(table, column, value, callback) {
-//     connection.query("INSERT INTO " + table + "(" + column + ")" + " VALUES (?)", [value], function(error, results, fields) {
-//         if (error) throw error;
-
-//         callback(results);
-
-//     });
-// };
-
-// exports.updateOne = function(table, column, newValue, id, callback) {
-//     connection.query("UPDATE " + table + " SET " + column + " =? WHERE id=?", [newValue, id], function(error, results, fields){
-//         if(error) throw error;
-
-//         callback(results);
-//     });
-// };
-
-
-
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
 // In order to write the query, we need 3 question marks.
@@ -133,6 +89,7 @@ var orm = {
     });
   },
 
+// Delete function
   deleteOne: function(tableInput, id, cb) {
     var queryString = "DELETE FROM " + tableInput;
 
@@ -151,5 +108,5 @@ var orm = {
   }
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;

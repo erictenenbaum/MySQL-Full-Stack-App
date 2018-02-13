@@ -22,9 +22,8 @@ $(function() {
         );
     });
 
-
-    $(".devour").on("click", function() {
-        // alert($(this).data("id"));
+    // Put ajax call to change the burger class from fresh to devoured
+    $(".devour").on("click", function() {        
         var id = $(this).data("id");
 
         var successObj = {
@@ -40,7 +39,7 @@ $(function() {
         });
     });
 
-
+// Delete ajax call to delete the burger from the database
     $(".delete").on("click", function(){
       var id = $(this).data("id");
 
